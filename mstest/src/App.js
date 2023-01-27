@@ -1,12 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import navBar from './components/navBar';
+function App(){
   return (
- <div id="page">
-Welcome to RecipeCentral
- </div>
-  );
+    navBar()
+  )
 }
-
 export default App;
