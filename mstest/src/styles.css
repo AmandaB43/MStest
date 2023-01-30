@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
+    background-color: burlywood;
 }
 body{
     margin: 0;
 }
 .nav{
-    background-color: bisque;
     color: black;
     display: flex;
     justify-content: space-between;
@@ -14,6 +14,7 @@ body{
     padding: 0 1rem;
 }
 .nav ul{
+    text-align: center;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -22,4 +23,16 @@ body{
 }
 .nav a{
     color: inherit;
+}
+.site-title{
+    text-decoration: none;
+}
+.about{
+    text-decoration: none;
+}
+.recipes{
+    text-decoration: none;
+}
+.reviews{
+    text-decoration: none;
 }
