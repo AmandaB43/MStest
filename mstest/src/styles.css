@@ -2,18 +2,16 @@
     box-sizing: border-box;
     background-color: burlywood;
 }
-body{
-    margin: 0;
-}
-.nav{
+.navBar{
     color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
     padding: 0 1rem;
+    margin: 0;
 }
-.nav ul{
+.list{
     text-align: center;
     padding: 0;
     margin: 0;
@@ -21,18 +19,15 @@ body{
     display:flex;
     gap: 1rem;
 }
-.nav a{
-    color: inherit;
-}
-.site-title{
+.home{
     text-decoration: none;
 }
 .about{
     text-decoration: none;
 }
-.recipes{
+.rec{
     text-decoration: none;
 }
-.reviews{
+.rev{
     text-decoration: none;
 }
