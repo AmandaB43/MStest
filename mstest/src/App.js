@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, 
   Link, Routes, Route } from 'react-router-dom'
   import './styles.css';
-
 import Recipes from './components/Recipes'
 import Home from './components/Home'
 import About from './components/About'
 import Reviews from './components/Reviews'
+
+import SearchBar from './components/searchBar'
+
 
 function App () {
     const recipes=['Peppered Chicken', 'Gourmet Burgers', 'Venice Pizza', 'Sushi Bake' ]
@@ -26,7 +28,6 @@ function App () {
                   <li>
                    <Link to="/Reviews"className='rev'>Reviews</Link>
                   </li>
-
               </ul>
           </div>
 
@@ -38,6 +39,9 @@ function App () {
               <Route path="/recipes" element={<Recipes recipes={recipes}/>} />
             </Routes>
           </div>
+          <div>
+        <SearchBar />
+      </div>
       </Router>
   )
 }
