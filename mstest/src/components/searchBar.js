@@ -5,33 +5,19 @@ const SearchBar = () => {
 
  const [searchInput, setSearchInput] = useState("");
 
- const countries = [
+ const recipes = [
 
-  { name: "Belgium", continent: "Europe" },
-  { name: "India", continent: "Asia" },
-  { name: "Bolivia", continent: "South America" },
-  { name: "Ghana", continent: "Africa" },
-  { name: "Japan", continent: "Asia" },
-  { name: "Canada", continent: "North America" },
-  { name: "New Zealand", continent: "Australasia" },
-  { name: "Italy", continent: "Europe" },
-  { name: "South Africa", continent: "Africa" },
-  { name: "China", continent: "Asia" },
-  { name: "Paraguay", continent: "South America" },
-  { name: "Usa", continent: "North America" },
-  { name: "France", continent: "Europe" },
-  { name: "Botswana", continent: "Africa" },
-  { name: "Spain", continent: "Europe" },
-  { name: "Senegal", continent: "Africa" },
-  { name: "Brazil", continent: "South America" },
-  { name: "Denmark", continent: "Europe" },
-  { name: "Mexico", continent: "South America" },
-  { name: "Australia", continent: "Australasia" },
-  { name: "Tanzania", continent: "Africa" },
-  { name: "Bangladesh", continent: "Asia" },
-  { name: "Portugal", continent: "Europe" },
-  { name: "Pakistan", continent:"Asia" },
-
+  { name: "Spaghetti", Ethnicity: "Italian" },
+  { name: "Carne Asada Tacos", Ethnicity: "Hispanic" },
+  { name: "Cheesburger", Ethnicity: "American" },
+  { name: "Pho", Ethnicity: "Asian" },
+  { name: "Sushi Bake", Ethnicity: "Japanese" },
+  { name: "Chicken Curry", Ethnicity: "Indian" },
+  { name: "Tiramisu", Ethnicity: "Italian" },
+  { name: "Cheescake", Ethnicity: "American" },
+  { name: "Macarons", Ethnicity: "Hispanic" },
+  { name: "Pan Fried Dumplings", Ethnicity: "Chinese" },
+  { name: "Mochi Balls", Ethnicity: "Asian" },
 ];
 
 const handleChange = (e) => {
@@ -40,8 +26,8 @@ const handleChange = (e) => {
 };
 
 if (searchInput.length > 0) {
-    countries.filter((country) => {
-    return country.name.match(searchInput);
+    recipes.filter((recipe) => {
+    return recipe.name.match(searchInput);
 });
 }
 
@@ -49,22 +35,22 @@ return <div>
 
 <input
    type="search"
-   placeholder="Search here"
+   placeholder="Whatcha cookin'?"
    onChange={handleChange}
    value={searchInput} />
 
 <table>
   <tr>
-    <th>Country</th>
-    <th>Continent</th>
+    <th>Search for </th>
+    <th>recipes here!</th>
   </tr>
 
-{countries.map((country, index) => {
+{recipes.map((recipe, index) => {
 
 <div>
   <tr>
-    <td>{country.name}</td>
-    <td>{country.continent}</td>
+    <td>{recipe.name}</td>
+    <td>{recipe.Ethnicity}</td>
   </tr>
 </div>
 

@@ -29,6 +29,9 @@ function App () {
                    <Link to="/Reviews"className='rev'>Reviews</Link>
                   </li>
               </ul>
+              <div>
+        <SearchBar />
+      </div>
           </div>
 
           <div className="display">
@@ -39,9 +42,6 @@ function App () {
               <Route path="/recipes" element={<Recipes recipes={recipes}/>} />
             </Routes>
           </div>
-          <div>
-        <SearchBar />
-      </div>
       </Router>
   )
 }
