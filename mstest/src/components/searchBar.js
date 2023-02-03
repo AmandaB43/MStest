@@ -1,65 +1,27 @@
-import React, {useState} from 'react'
+import {useState, useEffect} from 'react'
+import Recipes from './Recipes';
 
 
-const SearchBar = () => {
+function Recipe(){
+  const [ recipeData, setRecipeData ] = useState([]);
 
- const [searchInput, setSearchInput] = useState("");
-
- const recipes = [
-
-  { name: "Spaghetti", Ethnicity: "Italian" },
-  { name: "Carne Asada Tacos", Ethnicity: "Hispanic" },
-  { name: "Cheesburger", Ethnicity: "American" },
-  { name: "Pho", Ethnicity: "Asian" },
-  { name: "Sushi Bake", Ethnicity: "Japanese" },
-  { name: "Chicken Curry", Ethnicity: "Indian" },
-  { name: "Tiramisu", Ethnicity: "Italian" },
-  { name: "Cheescake", Ethnicity: "American" },
-  { name: "Macarons", Ethnicity: "Hispanic" },
-  { name: "Pan Fried Dumplings", Ethnicity: "Chinese" },
-  { name: "Mochi Balls", Ethnicity: "Asian" },
-];
-
-const handleChange = (e) => {
-  e.preventDefault();
-  setSearchInput(e.target.value);
-};
-
-if (searchInput.length > 0) {
-    recipes.filter((recipe) => {
-    return recipe.name.match(searchInput);
-});
+  useEffect( () => {
+    getRecipe();
+  }, []);
+  const getRecipe = async () => {
+    const api = await fetch(
+      `https://api.spoonacular.com/recipes/random?apikey=${process.env.REACT_APP_API_KEY}`
+    );
+    const data = await api.json();
+    console.log(data);
+  };
+  return<div>Recipes</div>;
 }
 
-return <div>
-
-<input
-   type="search"
-   placeholder="Whatcha cookin'?"
-   onChange={handleChange}
-   value={searchInput} />
-
-<table>
-  <tr>
-    <th>Search for </th>
-    <th>recipes here!</th>
-  </tr>
-
-{recipes.map((recipe, index) => {
-
-<div>
-  <tr>
-    <td>{recipe.name}</td>
-    <td>{recipe.Ethnicity}</td>
-  </tr>
-</div>
-
-})}
-</table>
-
-</div>
+export default Recipe;
 
 
-};
 
-export default SearchBar;
+//API KEY
+// https://api.spoonacular.com/recipes/716429/information?apiKey=1
+// da91af22e2e4bbcac6bb30d067e4c61
